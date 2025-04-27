@@ -1,0 +1,14 @@
+using ChemicalReactionNetworks
+using NonlinearSolve
+
+chems = ["N₂", "H₂", "NH₃"]
+reactions = [Reaction([1,2],[1,3],[3],[2],2.0,1.0)]
+rn = ReactionNetwork(reactions, chems)
+print(rn)
+ze=equilibrium_state(rn)
+print(ze)
+print("\n")
+u=mass_action(reactions,ze)
+print(u)
+
+
